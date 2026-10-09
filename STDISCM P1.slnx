@@ -3,5 +3,10 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="P1-AA/P1-AA.vcxproj" Id="8c0cfa7a-42b8-416a-a365-4467eb6e3e4f" />
+  <Project Path="A1/P1-AA.vcxproj" Id="8c0cfa7a-42b8-416a-a365-4467eb6e3e4f" />
+  <Project Path="A2/A2.vcxproj" Id="17f39fca-5964-46a7-925e-1f89b2972b43" />
+  <Project Path="B1/B1.vcxproj" Id="730d31dc-f627-42f7-a744-cb94dc944a35" />
+  <Project Path="B2/B2.vcxproj" Id="482b7c33-68e1-4d94-a869-c10a043ca592" />
+  <Project Path="readconfig/readconfig.vcxproj" Id="b9a4da71-b56d-44a1-bcb9-306b29e2aeea" />
+  <Project Path="threadpool/threadpool.vcxproj" Id="8c4fdc69-1ee8-4ca5-95dd-7bbf8f8226cd" />
 </Solution>

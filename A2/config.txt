@@ -1,0 +1,2 @@
+threadcount=5
+upperRange=1000

@@ -4,16 +4,19 @@
 #include <format>
 #include <thread>
 #include <vector>
+#include "readconfig.h"
 
 bool isPrime(unsigned long long int x) {
 	if (x == 1) return false;
+	if (x == 2 || x == 3) return true;
 	unsigned long long int i = 2;
 	unsigned long long int max = x / 2;
-	do {
+	while(i <= max)
+	{
 		if (x % i == 0)
 			return false;
 		i++;
-	} while (i < max);
+	} 
 	return true;
 }
 
@@ -36,35 +39,21 @@ void run(int id, unsigned long long int lowerb, unsigned long long int upperb) {
 
 
 int main(const int argc, const char *argv[]) {
-	printf("argument count: %d\n", argc);
-	for (int i = 0; i < argc; i++) {
-		printf("[%d]: %s\n",i, argv[i]);
-	}
-
-	int threadCount = strtol(argv[1], NULL, 10);
-	if (errno == ERANGE) {
-		perror("value given for thread exceeds int.");
-		return 1;
-	}
-	else if (threadCount < 1) {
-		perror("thread count given is zero or negative. Must be positive.");
-		return 1;
-	}
-
-	unsigned long long until = strtoull(argv[2], NULL, 10) + 1;
-	if (errno == ERANGE) {
-		perror("value given for upper range exceeds unsigned long long int.");
-		return 1;
-	}
-	else if (until < 1) {
-		perror("upper range given is zero or negative. Must be positive.");
-		return 1;
+	int threadCount;
+	unsigned long long until;
+	if (readConfig("config.txt", &threadCount, &until)) {
+		exit(1);
 	}
 
 	std::vector<std::thread> threads;
 	unsigned long long interval = until / threadCount;
+
+	//if (threadCount > until) {
+	//	threadCount = (int)until;
+	//}
+
 	for (int i = 0; i < threadCount; i++) {
-		unsigned long long lowerb = interval * i;
+		unsigned long long lowerb = interval * i + 1;
 		unsigned long long upperb = interval * (i + 1) - 1;
 		if (i == threadCount - 1) {
 			upperb = upperb + (until % threadCount);
