@@ -21,9 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{17f39fca-5964-46a7-925e-1f89b2972b43}</ProjectGuid>
-    <RootNamespace>A2</RootNamespace>
+    <ProjectGuid>{8565356B-D350-40DE-B8B5-53218DF2629E}</ProjectGuid>
+    <RootNamespace>P1AA</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>A1</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -140,16 +141,12 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="A1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\readconfig\readconfig.vcxproj">
       <Project>{b9a4da71-b56d-44a1-bcb9-306b29e2aeea}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="A2.cpp" />
-    <ClCompile Include="threadpool.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="threadpool.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="config.txt" />

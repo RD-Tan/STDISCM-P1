@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="B1.cpp" />
+    <ClCompile Include="threadSafeArray.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\readconfig\readconfig.vcxproj">
@@ -149,6 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="config.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="threadSafeArray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

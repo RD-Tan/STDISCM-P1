@@ -18,8 +18,16 @@
     <ClCompile Include="B1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="threadSafeArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="config.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="threadSafeArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

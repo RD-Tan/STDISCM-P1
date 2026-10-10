@@ -1,0 +1,2 @@
+threadcount=8
+upperRange=1000

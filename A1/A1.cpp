@@ -4,6 +4,7 @@
 #include <format>
 #include <thread>
 #include <vector>
+#include <iostream>
 #include "readconfig.h"
 
 bool isPrime(unsigned long long int x) {
@@ -45,6 +46,7 @@ int main(const int argc, const char *argv[]) {
 		exit(1);
 	}
 
+	auto start = std::chrono::steady_clock::now();
 	std::vector<std::thread> threads;
 	unsigned long long interval = until / threadCount;
 
@@ -64,6 +66,9 @@ int main(const int argc, const char *argv[]) {
 	for (auto &t : threads) {
 		t.join();
 	}
+	auto end = std::chrono::steady_clock::now();
+	auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+	std::cout << "Execution time: " << duration << " ms\n";
 
 	return 0;
 }
